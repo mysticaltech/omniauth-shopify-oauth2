@@ -82,6 +82,9 @@ module OmniAuth
         new_secret = options.client_secret
         old_secret = options.old_client_secret
 
+        print("validate_signature(new_secret) #{validate_signature(new_secret)}")
+        print("old_secret #{old_secret}")
+        print("validate_signature(old_secret) #{validate_signature(old_secret)}")
         validate_signature(new_secret) || (old_secret && validate_signature(old_secret))
       end
 
